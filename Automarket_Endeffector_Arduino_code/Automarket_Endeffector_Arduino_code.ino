@@ -18,6 +18,7 @@ void setup()
     pinMode(Lswitch1, INPUT);
     pinMode(Lswitch2, INPUT);
     //pinMode(led, OUTPUT);
+
 }
 
 void loop()
@@ -26,14 +27,16 @@ void loop()
 //////////Right Switch    
     if ((digitalRead(Lswitch1) == LOW) && (flagA == 0))
     {
-        Serial.println(0,BIN); //"right switch is closed"
+        int A = 1;
+        Serial.write(A); //"right switch is closed"
         flagA = 1;
         delay(20);
     }
 
     if ((digitalRead(Lswitch1) == HIGH) && (flagA == 1))
     {
-        Serial.println(1,BIN);//"right switch is opened"
+        int B = 2;
+        Serial.write(B);//"right switch is opened"
         flagA = 0;
         delay(20);
     }
@@ -57,14 +60,16 @@ void loop()
 ////////////////////Left switch
     if ((digitalRead(Lswitch2) == LOW) && (flagB == 0))
     {
-        Serial.println(3,BIN);//"left switch is closed"
+        int C = 3;
+        Serial.write(C);//"left switch is closed"
         flagB = 1;
         delay(20);
     }
 
     if ((digitalRead(Lswitch2) == HIGH) && (flagB == 1))
     {
-        Serial.println(4,BIN);//"left switch is opened"
+        int D = 4;
+        Serial.write(D);//"left switch is opened"
         flagB = 0;
         delay(20);
     }
