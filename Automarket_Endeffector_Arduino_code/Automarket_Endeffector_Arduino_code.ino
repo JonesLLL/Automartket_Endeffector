@@ -27,7 +27,7 @@ void loop()
 //////////Right Switch    
     if ((digitalRead(Lswitch1) == LOW) && (flagA == 0))
     {
-        int A = 1;
+        char A = 1;
         Serial.write(A); //"right switch is closed"
         flagA = 1;
         delay(20);
@@ -35,7 +35,7 @@ void loop()
 
     if ((digitalRead(Lswitch1) == HIGH) && (flagA == 1))
     {
-        int B = 2;
+        char B = 2;
         Serial.write(B);//"right switch is opened"
         flagA = 0;
         delay(20);
@@ -60,7 +60,7 @@ void loop()
 ////////////////////Left switch
     if ((digitalRead(Lswitch2) == LOW) && (flagB == 0))
     {
-        int C = 3;
+        char C = 3;
         Serial.write(C);//"left switch is closed"
         flagB = 1;
         delay(20);
@@ -68,7 +68,7 @@ void loop()
 
     if ((digitalRead(Lswitch2) == HIGH) && (flagB == 1))
     {
-        int D = 4;
+        char D = 4;
         Serial.write(D);//"left switch is opened"
         flagB = 0;
         delay(20);
